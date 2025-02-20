@@ -1,0 +1,163 @@
+#1
+void setup() {
+  pinMode(42,OUTPUT);
+  pinMode(6,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(42,HIGH);
+  digitalWrite(6,LOW);
+  Serial.print("42 is on");
+  delay(1000);
+  digitalWrite(42,LOW);
+  digitalWrite(6,HIGH);
+  Serial.print("42 is off");
+  delay(1000);
+}
+#2
+void setup() {
+  pinMode(42,OUTPUT);
+  pinMode(6,OUTPUT);
+  pinMode(5,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(42,LOW);
+  digitalWrite(6,HIGH);
+  digitalWrite(5,LOW);
+  Serial.print("42 is on");
+  delay(1000);
+  digitalWrite(42,HIGH);
+  digitalWrite(6,LOW);
+  digitalWrite(6,HIGH);
+  Serial.print("42 is off");
+  delay(1000);
+}
+#3
+int IR=12;
+void setup(){
+ pinMode(IR, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+ int value= digitalRead(IR);
+ if (value==HIGH) 
+ {
+  Serial.println("LED IS ON");
+ }
+ else
+ {
+  Serial.println("LED IS OFF");
+ }
+  
+}
+
+#4
+int IR=12;
+int LED=42;
+void setup(){
+ pinMode(IR, INPUT);
+ pinMode(LED,OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+ int value= digitalRead(IR);
+ if (value==HIGH) 
+ {
+  Serial.println("LED IS ON");
+  digitalWrite(LED,HIGH);
+ }
+ else
+ {
+  Serial.println("LED IS OFF");
+  digitalWrite(LED,LOW);
+ }
+  
+}
+#5
+int IR=12;
+int LED=42;
+int BUZZER=6;
+void setup(){
+ pinMode(IR, INPUT);
+ pinMode(LED,OUTPUT);
+ pinMode(BUZZER,OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+ int value= digitalRead(IR);
+ if (value==HIGH) 
+ {
+  Serial.println("LED IS ON");
+  digitalWrite(LED,HIGH);
+  digitalWrite(BUZZER,LOW);
+ }
+ else
+ {
+  Serial.println("LED IS OFF");
+  digitalWrite(LED,LOW);
+  digitalWrite(BUZZER,HIGH);
+ }
+  
+}
+
+#6
+int SOUNDSENSOR=A0;
+void setup(){
+ pinMode(SOUNDSENSOR, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+ int value= analogRead(SOUNDSENSOR);
+Serial.println(" SOUNDSENSOR ,value");
+ delay(1000);
+  
+}
+
+#7
+int SOUNDSENSOR=A0;
+void setup(){
+ pinMode(SOUNDSENSOR, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+ int value= analogRead(SOUNDSENSOR);
+ if (value>500)
+ {
+ digitalWrite(SOUNDSENSOR, HIGH);
+ }
+ Serial.println("value"); 
+}
+
+#8
+int TOUCHSENSOR=14;
+void setup()
+{
+ pinMode(TOUCHSENSOR, INPUT);
+  Serial.begin(9600);
+}
+void loop() {
+ int value= digitalRead(TOUCHSENSOR);
+ if(value==HIGH)
+ {
+  Serial.println("TOUCHSENSOR IS DETECTED");
+  delay(1000);
+}
+ else
+ {
+  Serial.println("TOUCHSENSOR IS NOT DETECTED");
+  delay(1000);
+}
+}
+
+
+
+
+
+
+
+
+
+
